@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOPFlyingVehicleCore.EngineClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +30,7 @@ namespace OOPFlyingVehicle
                  * Airplane class tests
                  * many of the airplane class methods return a string we will write these to the console for testing
                  */
-                Airplane ap = new Airplane();
+                Airplane ap = new Airplane(new JetEngine());
                 //Air plane should inherit from AerialVehicle
                 WriteLine(ap.About());
                 /* Output AirplaneAbout:

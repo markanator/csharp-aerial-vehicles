@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OOPFlyingVehicle;
+using OOPFlyingVehicleCore.EngineClasses;
 
 namespace UnitTestFlyingVehicle
 {
@@ -27,7 +28,7 @@ namespace UnitTestFlyingVehicle
 
         public AirplaneTests()
         {
-            Airplane = new Airplane();
+            Airplane = new Airplane(new JetEngine());
         }
 
         [TestMethod]

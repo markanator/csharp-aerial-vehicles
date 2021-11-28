@@ -22,7 +22,7 @@ namespace UnitTestFlyingVehicle
 
         public ToyPlaneTests()
         {
-            tp = new ToyPlane();
+            tp = new ToyPlane(new RubberBandEngine());
         }
 
         /// <summary>

@@ -14,9 +14,9 @@ namespace OOPFlyingVehicleCore.Ninject
         {
             this.Bind<IEngine>().To<Engine>();
             // if they ask for xx, they get zz
-            this.Bind<IEngine>().To<JetEngine>().WhenInjectedInto<Airplane>();
+            this.Bind<IEngine>().To<JetEngine>().WhenInjectedExactlyInto<Airplane>();
             this.Bind<IEngine>().To<ReciprocatingEngine>().WhenInjectedInto<Helicopter>();
-            this.Bind<IEngine>().To<RubberBandEngine>().WhenInjectedInto<ToyPlane>();
+            this.Bind<IEngine>().To<RubberBandEngine>().WhenInjectedExactlyInto<ToyPlane>();
             this.Bind<IEngine>().To<UAVEngine>().WhenInjectedInto<Drone>();
         }
     }

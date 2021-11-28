@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OOPFlyingVehicle;
+using OOPFlyingVehicleCore.EngineClasses;
 
 namespace UnitTestFlyingVehicle
 {
@@ -20,7 +21,7 @@ namespace UnitTestFlyingVehicle
         public void AerialVehicleEngineTests()
         {
             //Arrange
-            Airplane ap = new Airplane();
+            Airplane ap = new Airplane(new JetEngine());
             //Act 
             bool defaultEngine = ap.Engine.IsStarted;  //default should be off
             ap.StartEngine();

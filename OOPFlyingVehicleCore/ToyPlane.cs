@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOPFlyingVehicleCore.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,10 +10,9 @@ namespace OOPFlyingVehicle
     {
         bool isWoundUP { get; }
 
-        public ToyPlane()
+        public ToyPlane(IEngine eng): base(eng)
         {
             this.MaxAltitude = 50;
-            this.Engine = new RubberBandEngine();
         }
 
         public override void StartEngine()

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOPFlyingVehicleCore.EngineClasses
 {
-    internal class UAVEngine : Engine
+    public class UAVEngine : Engine
     {
         public UAVEngine() { }
     }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace OOPFlyingVehicleCore.EngineClasses
 {
-    internal class ReciprocatingEngine : Engine
+    public class ReciprocatingEngine : Engine
     {
         public ReciprocatingEngine() { }
     }

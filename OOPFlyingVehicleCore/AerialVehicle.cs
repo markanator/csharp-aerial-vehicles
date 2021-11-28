@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOPFlyingVehicleCore.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,14 +8,14 @@ namespace OOPFlyingVehicle
 {
     public abstract class AerialVehicle
     {
-        public Engine Engine { get; protected set; }
+        public IEngine Engine { get; protected set; }
         public bool IsFlying { get; protected set; }
         public int MaxAltitude { get; protected set; }
         public int CurrentAltitude { get; protected set; }
 
-        public AerialVehicle()
+        public AerialVehicle(IEngine _e)
         {
-            this.Engine = new Engine();
+            this.Engine = _e;
             
         }
 
