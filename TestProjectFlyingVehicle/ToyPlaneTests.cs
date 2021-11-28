@@ -77,6 +77,7 @@ namespace UnitTestFlyingVehicle
 
         [TestMethod]
         [TestCategory("ToyEngine")]
+        [Ignore]
         public void ToyPlanEngineWoundIsStarted()
         {
             //Arrange
