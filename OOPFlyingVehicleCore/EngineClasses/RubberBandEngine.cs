@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPFlyingVehicle
 {
-    public class ToyEngine : Engine
+    public class RubberBandEngine : Engine
     {
         public int NumWinds { get; set; }
         public int NumWindsFullyWound { get; set; }
@@ -15,29 +15,24 @@ namespace OOPFlyingVehicle
             get { return NumWinds >= NumWindsFullyWound; } 
         }
 
-        public ToyEngine()
+        public RubberBandEngine()
         {
             this.NumWindsFullyWound = 20;
         }
 
-        public override void Stop()
+        public new void Stop()
         {
             if (base.IsStarted)
             {
                 base.Stop();
             }
         }
-        public override void Start()
+        public new void Start()
         {
             if (this.IsFullyWound)
             {
                 base.Start();
             }
-        }
-
-        public override string About()
-        {
-            return base.About();
         }
 
         internal void Wind()

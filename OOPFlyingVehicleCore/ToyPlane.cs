@@ -12,12 +12,22 @@ namespace OOPFlyingVehicle
         public ToyPlane()
         {
             this.MaxAltitude = 50;
-            this.Engine = new ToyEngine();
+            this.Engine = new RubberBandEngine();
         }
 
         public override void StartEngine()
         {
-            base.StartEngine();
+            if (this.isWoundUP)
+            {
+                base.StartEngine();
+            }
+        }
+        public override void StopEngine()
+        {
+            if (base.CurrentAltitude == 0)
+            {
+                base.StopEngine();
+            }
         }
 
         public override string TakeOff()
@@ -33,7 +43,7 @@ namespace OOPFlyingVehicle
 
         public void WindUp()
         {
-            while (((ToyEngine)Engine).IsFullyWound == false)
+            while (((RubberBandEngine)Engine).IsFullyWound == false)
             {
                 this.Wind();
             }
@@ -41,7 +51,7 @@ namespace OOPFlyingVehicle
 
         public void Wind()
         {
-            ((ToyEngine)Engine).Wind();
+            ((RubberBandEngine)Engine).Wind();
         }
 
         public void UnWind()
@@ -53,7 +63,7 @@ namespace OOPFlyingVehicle
         {
             if (this.CurrentAltitude == 0)
             {
-                ((ToyEngine)Engine).NumWinds = 0;
+                ((RubberBandEngine)Engine).NumWinds = 0;
             }
         }
 

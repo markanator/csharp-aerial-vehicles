@@ -55,24 +55,7 @@ namespace UnitTestFlyingVehicle
             //act
             
             //asset
-            Assert.IsInstanceOfType(tp.Engine, typeof(ToyEngine));
-        }
-
-        [TestMethod]
-        [Ignore]
-        public void ToyPlaneNotATestAnymore()
-        {
-            //Arrange
-            tp.StopEngine();
-            tp.UnWind();
-            //Act
-            bool EngineBeforeStart, EngineAfterStart;
-            EngineBeforeStart = tp.Engine.IsStarted;
-            tp.StartEngine();
-            EngineAfterStart = tp.Engine.IsStarted;
-            //Assert
-            Assert.IsFalse(EngineBeforeStart);
-            Assert.IsFalse(EngineAfterStart);
+            Assert.IsInstanceOfType(tp.Engine, typeof(RubberBandEngine));
         }
 
         [TestMethod]
@@ -115,7 +98,7 @@ namespace UnitTestFlyingVehicle
         {
             //Arrange
             int windsbefore, windsafter;
-            ToyEngine engine = tp.Engine as ToyEngine;
+            RubberBandEngine engine = tp.Engine as RubberBandEngine;
             //Act
             
             windsbefore = engine.NumWinds;
@@ -132,7 +115,7 @@ namespace UnitTestFlyingVehicle
         {
             //Arrange
             int windsbefore, windsafter;
-            ToyEngine engine = tp.Engine as ToyEngine;
+            RubberBandEngine engine = tp.Engine as RubberBandEngine;
             engine.NumWinds = 1;
             //Act
 
@@ -151,7 +134,7 @@ namespace UnitTestFlyingVehicle
             //Arrange
             int windsbefore, windsafter;
             int EngineDefaultMaxWinds;
-            ToyEngine engine = tp.Engine as ToyEngine;
+            RubberBandEngine engine = tp.Engine as RubberBandEngine;
             //Act
             EngineDefaultMaxWinds = 20;
             windsbefore = engine.NumWinds;
@@ -167,7 +150,7 @@ namespace UnitTestFlyingVehicle
         public void ToyPlaneUnWindCompletely()
         {
             //Arrange
-            ToyEngine engine = tp.Engine as ToyEngine;
+            RubberBandEngine engine = tp.Engine as RubberBandEngine;
             //Act
             tp.UnWind();
             //Assert
